@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy – CreatorKit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,600,700&f[]=cabinet-grotesk@300,400,500,700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="dark"] {
+  --bg: #080810; --card: #12121e; --border: #1e1e32;
+  --text: #eeeaf8; --text2: #9999bb; --text3: #55556e;
+  --toggle-bg: #1e1e32;
+}
+[data-theme="light"] {
+  --bg: #f5f3ff; --card: #ffffff; --border: #e0daf5;
+  --text: #18162a; --text2: #5a5278; --text3: #aba3c8;
+  --toggle-bg: #e5e0f5;
+}
+:root {
+  --r: #ff3d5a; --y: #ffbe0b;
+  --font-head: 'Clash Display', 'Syne', sans-serif;
+  --font-body: 'Cabinet Grotesk', 'DM Sans', sans-serif;
+  --radius: 18px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 16px;
+  line-height: 1.7; min-height: 100vh;
+}
+.blob {
+  position: fixed; border-radius: 50%;
+  filter: blur(140px); pointer-events: none; z-index: 0;
+}
+[data-theme="dark"]  .blob { opacity: 0.1; }
+[data-theme="light"] .blob { opacity: 0.15; }
+.blob-1 { width:500px;height:500px;background:var(--r);top:-150px;left:-100px; }
+.blob-2 { width:400px;height:400px;background:#6020e0;bottom:0;right:-100px; }
+
+.theme-toggle {
+  position: fixed; top: 20px; right: 20px; z-index: 1000;
+  background: var(--toggle-bg); border: 1px solid var(--border);
+  border-radius: 100px; padding: 6px 14px; cursor: pointer;
+  font-size: 0.78rem; font-family: var(--font-head); font-weight: 600;
+  color: var(--text2); display: flex; align-items: center; gap: 6px;
+  transition: background 0.2s;
+}
+
+nav {
+  position: relative; z-index: 10;
+  padding: 28px 24px 0;
+  max-width: 760px; margin: 0 auto;
+}
+nav a {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.1rem;
+  color: var(--text); text-decoration: none; display: inline-flex;
+  align-items: center; gap: 8px;
+}
+nav a span { color: var(--r); }
+nav a:hover { opacity: 0.8; }
+
+.container {
+  position: relative; z-index: 10;
+  max-width: 760px; margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+h1 {
+  font-family: var(--font-head); font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 12px;
+}
+.updated {
+  font-size: 0.8rem; color: var(--text3);
+  font-family: var(--font-head); letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 40px;
+  display: block;
+}
+
+.section {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  margin-bottom: 16px;
+}
+h2 {
+  font-family: var(--font-head); font-size: 1.05rem;
+  font-weight: 700; margin-bottom: 12px; color: var(--text);
+}
+h2::before {
+  content: '—'; color: var(--r); margin-right: 8px; font-weight: 700;
+}
+p { color: var(--text2); font-size: 0.9rem; margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+ul { color: var(--text2); font-size: 0.9rem; padding-left: 20px; }
+ul li { margin-bottom: 6px; }
+a.inline { color: var(--y); }
+
+footer {
+  position: relative; z-index: 10;
+  text-align: center; padding: 24px;
+  color: var(--text3); font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--y); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+  <span class="icon">🌙</span>
+  <span class="label">Dark</span>
+</button>
+
+<nav>
+  <a href="index.html">← Creator<span>Kit</span></a>
+</nav>
+
+<div class="container">
+  <h1>Privacy Policy</h1>
+  <span class="updated">Last updated: May 2025</span>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>CreatorKit ("we", "us", or "our") operates the website at <strong>ashermichaels-ux.github.io/CreatorsKit</strong>. This page explains what information we collect, how we use it, and your rights.</p>
+    <p>We are committed to protecting your privacy. This site is free to use and requires no account or login.</p>
+  </div>
+
+  <div class="section">
+    <h2>Information We Collect</h2>
+    <p>We do not collect, store, or process any personal data directly. Specifically:</p>
+    <ul>
+      <li>We do not require you to create an account</li>
+      <li>We do not collect your name, email, or any identifying information</li>
+      <li>Text you type into our tools is sent directly to Gemini (Google) — we never see or store it</li>
+      <li>We do not use cookies of our own</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Third-Party Services</h2>
+    <p>This site uses the following third-party services which may collect data independently:</p>
+    <ul>
+      <li><strong>Google AdSense</strong> — displays ads and may use cookies to show relevant ads. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Google Gemini</strong> — when you click a tool button, your input and a prompt are sent to Gemini's website in a new tab. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Google Fonts</strong> — fonts are loaded from Google's servers. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Affiliate links</strong> — links to Jasper AI, Canva, Epidemic Sound, and Notion may use cookies to track referrals. See each company's respective privacy policy.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Cookies</h2>
+    <p>CreatorKit itself only stores one item in your browser's local storage: your dark/light mode preference. This never leaves your device and is not shared with anyone.</p>
+    <p>Third-party services (Google AdSense, affiliate partners) may set their own cookies. You can control cookies through your browser settings.</p>
+  </div>
+
+  <div class="section">
+    <h2>Advertising</h2>
+    <p>We use Google AdSense to display advertisements. Google may use cookies and web beacons to serve ads based on your prior visits to this and other websites.</p>
+    <p>You may opt out of personalised advertising by visiting <a class="inline" href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google's Ad Settings</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>Affiliate Links</h2>
+    <p>Some links on this site are affiliate links. This means we may earn a small commission if you click through and make a purchase — at no extra cost to you. We only recommend tools we believe are genuinely useful for content creators.</p>
+  </div>
+
+  <div class="section">
+    <h2>Children's Privacy</h2>
+    <p>CreatorKit is not directed at children under 13. We do not knowingly collect any information from children.</p>
+  </div>
+
+  <div class="section">
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Changes will be reflected by updating the "Last updated" date at the top of this page.</p>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <p>If you have any questions about this privacy policy, you can reach us via the GitHub repository at <a class="inline" href="https://github.com/ashermichaels-ux/CreatorsKit" target="_blank" rel="noopener">github.com/ashermichaels-ux/CreatorsKit</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html">← Back to CreatorKit</a> &nbsp;·&nbsp; © 2025 CreatorKit
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  const btn = document.querySelector('.theme-toggle');
+  btn.querySelector('.icon').textContent  = isDark ? '☀️' : '🌙';
+  btn.querySelector('.label').textContent = isDark ? 'Light' : 'Dark';
+  localStorage.setItem('ck-theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('ck-theme');
+  if (saved && saved !== 'dark') {
+    document.documentElement.setAttribute('data-theme', saved);
+    const btn = document.querySelector('.theme-toggle');
+    if (btn) { btn.querySelector('.icon').textContent = '☀️'; btn.querySelector('.label').textContent = 'Light'; }
+  }
+})();
+</script>
+</body>
+</html>
