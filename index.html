@@ -500,6 +500,59 @@ textarea::placeholder { color: var(--text3); }
 }
 
 /* ════════════════════════════════
+   VIDEO SECTION
+════════════════════════════════ */
+.video-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.video-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.video-thumb {
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  max-height: 320px;
+  overflow: hidden;
+}
+.video-coming {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center; padding: 20px;
+}
+.video-icon { font-size: 2.5rem; }
+.video-coming span {
+  font-family: var(--font-head);
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--text2);
+}
+.video-sub {
+  font-size: 0.72rem !important;
+  color: var(--text3) !important;
+  font-weight: 400 !important;
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.video-info { padding: 16px 18px 18px; }
+.video-title {
+  font-family: var(--font-head);
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--text); margin-bottom: 4px;
+}
+.video-desc {
+  font-size: 0.78rem; color: var(--text2); line-height: 1.4;
+}
+
+/* ════════════════════════════════
    FOOTER
 ════════════════════════════════ */
 footer {
@@ -772,6 +825,88 @@ footer p + p { margin-top: 6px; font-size: 0.72rem; color: var(--text3); }
     Advertisement · 728×90
   </div>
 </div>
+
+<!-- ══ VIDEO SECTION ══ -->
+<div class="section-label" style="margin-top:40px;">
+  <span>See it in action</span><hr/>
+</div>
+
+<section id="video-section" style="position:relative;z-index:10;max-width:1100px;margin:20px auto 0;padding:0 24px;">
+  <p style="color:var(--text2);font-size:0.88rem;margin-bottom:24px;">Watch how each tool works in under 20 seconds.</p>
+
+  <div id="video-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+
+    <!-- VIDEO PLACEHOLDER CARDS — replace src with your real TikTok embed URLs -->
+    <div class="video-card">
+      <div class="video-thumb">
+        <div class="video-coming">
+          <span class="video-icon">🎬</span>
+          <span>Hook Generator</span>
+          <span class="video-sub">Video coming soon</span>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Hook Generator Demo</div>
+        <div class="video-desc">Watch how to write 5 viral hooks in 10 seconds</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb">
+        <div class="video-coming">
+          <span class="video-icon">📝</span>
+          <span>Caption Writer</span>
+          <span class="video-sub">Video coming soon</span>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Caption Writer Demo</div>
+        <div class="video-desc">See how to write a viral caption in seconds</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb">
+        <div class="video-coming">
+          <span class="video-icon">🎬</span>
+          <span>YouTube Titles</span>
+          <span class="video-sub">Video coming soon</span>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">YouTube Title Optimizer Demo</div>
+        <div class="video-desc">Get 5 SEO-optimised titles for any video</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HOW TO ADD YOUR VIDEOS — visible only in page source, not on site -->
+  <!--
+    TO ADD YOUR TIKTOK VIDEO:
+    1. Post your video on TikTok
+    2. Tap Share on the video → Copy Link
+    3. Replace the placeholder card above with this embed code:
+
+    <div class="video-card">
+      <div style="position:relative;padding-bottom:177%;height:0;overflow:hidden;border-radius:16px;">
+        <iframe
+          src="https://www.tiktok.com/embed/YOUR_VIDEO_ID"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:16px;"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Hook Generator Demo</div>
+        <div class="video-desc">Watch how to write 5 viral hooks in 10 seconds</div>
+      </div>
+    </div>
+
+    Get YOUR_VIDEO_ID from your TikTok link:
+    https://www.tiktok.com/@username/video/7234567890123456789
+    The long number at the end is your VIDEO_ID
+  -->
+</section>
 
 <!-- ══ AFFILIATE CARDS ══ -->
 <div class="section-label" style="margin-top:32px;">
