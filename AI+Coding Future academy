@@ -1,0 +1,80 @@
+'use client'
+import { useEffect, useState } from 'react'
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
+
+const COURSE_ID = '5c7383d3-c9c6-464b-97af-618aafa2b8c1'
+
+export default function Quiz() {
+  const [questions, setQuestions] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [current, setCurrent] = useState(0)
+  const [score, setScore] = useState(0)
+  const [finished, setFinished] = useState(false)
+
+  useEffect(() => {
+    async function loadQuestions() {
+      const { data, error } = await supabase
+      .from('questions')
+      .select('*')
+      .eq('course_id', COURSE_ID)
+      .limit(30)
+
+      if (error) {
+        console.error(error)
+      } else {
+        setQuestions(data)
+      }
+      setLoading(false)
+    }
+    loadQuestions()
+  }, [])
+
+  if (loading) return <div className="min-h-screen flex items-center justify-center">Loading questions...</div>
+  if (!questions.length) return <div className="min-h-screen flex items-center justify-center">No questions found for this course</div>
+  if (finished) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4">Quiz Complete!</h1>
+        <p className="text-xl">Your score: {score} / {questions.length}</p>
+      </div>
+    </div>
+  )
+
+  const q = questions[current]
+
+  function checkAnswer(option) {
+    if (option === q.correct_answer) setScore(score + 1)
+    if (current < questions.length - 1) setCurrent(current + 1)
+    else setFinished(true)
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg p-8">
+        <div className="mb-6 flex justify-between">
+          <p className="text-sm text-gray-500">Question {current + 1} of {questions.length}</p>
+          <p className="text-sm text-gray-500">Score: {score}</p>
+        </div>
+
+        <h2 className="text-2xl font-bold mb-6">{q.question_text}</h2>
+
+        <div className="space-y-3">
+          {[q.option_a, q.option_b, q.option_c, q.option_d].map((opt, i) => (
+            <button
+              key={i}
+              onClick={() => checkAnswer(opt)}
+              className="w-full text-left p-4 border-gray-300 rounded-xl hover:bg-blue-50 hover:border-blue-400 transition"
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
